@@ -1,0 +1,85 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ROFI Platform",
+    "version": "1.0.0",
+    "description": "ROFI API Document",
+    "contact": {
+      "name": "ROFI Platform",
+      "url": "https://app.rofi.games/",
+      "email": "tanlm@bravezone.com"
+    }
+  },
+  "host": "developer.rofi.games",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:8890",
+      "description": "Development server"
+    },
+    {
+      "url": "https://api-dev.rofi.games",
+      "description": "Test server"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "$ref#token": "./docs/rofi-token-api.json#/paths",
+    "$ref#nft": "./docs/rofi-nft-api.json#/paths",
+    "$ref#marketplace": "./docs/rofi-marketplace-api.json#/paths"
+  },
+  "components": {
+    "schemas": {
+      "$ref#token": "./docs/rofi-token-api.json#/components/schemas",
+      "$ref#nft": "./docs/rofi-nft-api.json#/components/schemas",
+      "$ref#marketplace": "./docs/rofi-marketplace-api.json#/components/schemas"
+    },
+    "responses": {
+      "$ref": "./docs/rofi-token-api.json#/components/responses"
+    },
+    "securitySchemes": {
+      "$ref": "./docs/rofi-token-api.json#/components/securitySchemes"
+    }
+  },
+  "tags": [
+    {
+      "name": "Token",
+      "description": "This is in the description\\\nThis is in **bold**"
+    },
+    {
+      "name": "Item",
+      "description": "NFT Item Management"
+    },
+    {
+      "name": "Airdrop Event",
+      "description": "Airdrop event information"
+    },
+    {
+      "name": "Airdrop",
+      "description": "Airdrop"
+    },
+    {
+      "name": "Marketplace",
+      "description": "NFT Marketplace order APIs"
+    },
+    {
+      "name": "Pack",
+      "description": "Pack information in Store"
+    },
+    {
+      "name": "Statistics",
+      "description": "Statistic APIs"
+    },
+    {
+      "name": "Store Order",
+      "description": "Order in store"
+    }
+  ]
+}
