@@ -1,1 +1,2697 @@
-{"openapi":"3.0.0","info":{"title":"Rofi Marketplace","version":"1.0.0","description":"API connect to Rofi NFT - Rofi Platform","contact":{"name":"Rofi NFT","url":"https://app.rofi.games/","email":"tanlm@bravezone.com"}},"servers":[{"url":"http://localhost:8892","description":"Development server"},{"url":"http://app-api-dev.rofi.games","description":"Test server"}],"paths":{"/public/airdrop-event/{event}":{"get":{"summary":"Get airdrop event configuration","tags":["Airdrop Event"],"parameters":[{"in":"path","name":"event","required":true,"schema":{"type":"string"},"description":"Event code"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"type":"array","items":{"$ref":"#/components/schemas/AirdropEvent"}}}},"example":{"code":0,"message":null,"data":[{"_id":"6433dc1dada92d1e1bba668b","event":"RG-02","remainingAmount":15499,"maxAmount":15500,"item":{"packId":"airdrop_78288","index":1,"collectionId":"RG-02","itemType":"78288","imageUrl":"https://cdn-iw-02.rofi.io/item/78288.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/78288.mp4","name":"Royal Sword","isHot":false,"isNew":false,"symbol":"IDL","isDisabled":false,"detail":{"type":"Accessory","rarity":1,"mdp":475,"dp":475,"earnPoint":1,"itemDescription":"The holy sword that attests to the strength of the royal family - A piece of the Royal outfit"},"gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.","collectionDescription":"The Royal costume emulates medieval emperors and queens. Transform into kings and queens with the main white outfit."},"createdAt":"2023-04-10T09:51:25.620Z","updatedAt":"2023-04-12T08:50:45.237Z"},{"_id":"6433dc2aada92d1e1bba668d","event":"RG-02","remainingAmount":15499,"maxAmount":15500,"item":{"index":1,"collectionId":"RG-02","itemType":"78001","imageUrl":"https://cdn-iw-02.rofi.io/item/78001.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/78001.mp4","name":"Ice Lyre","isHot":false,"isNew":false,"symbol":"IDL","isDisabled":false,"detail":{"type":"Accessory","rarity":1,"mdp":475,"dp":475,"earnPoint":1,"itemDescription":"Accessory -A  piece of the Ice Prince outfit"},"gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.","collectionDescription":"Ice Prince is an outfit set with striking blue accents with pure white accents. An outfit with many beautiful and fanciful details."},"createdAt":"2023-04-10T09:51:38.933Z","updatedAt":"2023-04-12T08:57:35.906Z"},{"_id":"6433dc31ada92d1e1bba668f","event":"RG-02","remainingAmount":15499,"maxAmount":15500,"item":{"index":1,"collectionId":"RG-02","itemType":"78197","imageUrl":"https://cdn-iw-02.rofi.io/item/78197.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/78197.mp4","name":"Black Cat Scepter","isHot":false,"isNew":false,"symbol":"BUSD","isDisabled":false,"detail":{"type":"Accessory","rarity":1,"mdp":475,"dp":475,"earnPoint":1,"itemDescription":"Supreme Scepter -  A piece of the Black Cat outfit"},"gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.","collectionDescription":"Who doesn't fall in love with cute cat shapes? Black Cat outfit for cat lovers here."},"createdAt":"2023-04-10T09:51:45.929Z","updatedAt":"2023-04-12T11:18:40.369Z"},{"_id":"6433dc36ada92d1e1bba6691","event":"RG-02","remainingAmount":1000,"maxAmount":1000,"item":{"index":1,"collectionId":"RG-02","itemType":"31439","imageUrl":"https://cdn-iw-02.rofi.io/item/31439.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/31439.mp4","name":"Fairy Wings","isHot":false,"isNew":false,"symbol":"IDL","isDisabled":false,"detail":{"type":"Wing","rarity":1,"mdp":475,"dp":475,"earnPoint":2,"itemDescription":"The Wings of the Forest Gods - A piece of the Fairy costume"},"gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.","collectionDescription":"A costume version of the incarnation of the forest fairies."},"createdAt":"2023-04-10T09:51:50.981Z","updatedAt":"2023-04-10T09:51:50.981Z"},{"_id":"6433dc3cada92d1e1bba6693","event":"RG-02","remainingAmount":2500,"maxAmount":2500,"item":{"index":1,"collectionId":"RG-02","itemType":"89250","imageUrl":"https://cdn-iw-02.rofi.io/item/89250.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/89250.mp4","name":"Green Phoenix Nest","isHot":false,"isNew":false,"symbol":"IDL","isDisabled":false,"detail":{"type":"Vehicle","rarity":1,"mdp":475,"dp":475,"earnPoint":1,"itemDescription":"Vehicle featured with separate seat and phoenix- A piece of the Green Phoenix outfit"},"gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.","collectionDescription":"The costume is designed with the inspiration of the wonderful phoenix. One of Idol World's most sparkly outfits"},"createdAt":"2023-04-10T09:51:56.772Z","updatedAt":"2023-04-10T09:51:56.772Z"}]}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":4501,"message":"The account has received airdrop item before"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/public/airdrop/RG-02":{"post":{"summary":"Receive airdrop item","tags":["Airdrop"],"security":[{"bearerAuth":[]}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"type":"object","properties":{"airdrop":{"type":"object","$ref":"#/components/schemas/Airdrop"},"items":{"type":"array","items":{"$ref":"#/components/schemas/Item"}}}}}},"example":{"code":0,"message":"Successfully","data":{"airdrop":{"userId":"2ae00ece-98b5-42b8-9134-d873ef31944b","event":"RG-02","itemId":"64532ead1b83594acec1f79f","_id":"64532ead060428fa566c9fbc","createdAt":"2023-05-04T04:03:57.365Z","updatedAt":"2023-05-04T04:03:57.365Z"},"items":{"userId":"2ae00ece-98b5-42b8-9134-d873ef31944b","imageUrl":"https://cdn-iw-02.rofi.io/item/78001.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/78001.mp4","collectionId":"RG-02","type":"78001","name":"Ice Lyre","price":null,"orderId":null,"nftOwner":null,"status":1,"server":1,"createdBy":"2ae00ece-98b5-42b8-9134-d873ef31944b","attributes":{"mdp":475,"dp":475,"earnPoint":1,"rarity":1,"type":"Accessory"},"collectionDescription":"Ice Prince is an outfit set with striking blue accents with pure white accents. An outfit with many beautiful and fanciful details.","gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.","itemDescription":"Accessory -A  piece of the Ice Prince outfit","source":"airdrop","_id":"64532ead1b83594acec1f79f","createdAt":"2023-05-04T04:03:57.329Z","updatedAt":"2023-05-04T04:03:57.329Z","nftId":null,"id":"64532ead1b83594acec1f79f"}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":4501,"message":"The account has received airdrop item before"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}},"get":{"summary":"Get airdrop received","tags":["Airdrop"],"security":[{"bearerAuth":[]}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"type":"object","$ref":"#/components/schemas/Airdrop"}}},"example":{"code":0,"message":"Successfully","data":{"_id":"64532ead060428fa566c9fbc","userId":"2ae00ece-98b5-42b8-9134-d873ef31944b","event":"RG-02","itemId":"64532ead1b83594acec1f79f","createdAt":"2023-05-04T04:03:57.365Z","updatedAt":"2023-05-04T04:03:57.365Z"}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":4501,"message":"The account has received airdrop item before"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/internal/order/create":{"post":{"summary":"Create new store order","tags":["Marketplace"],"security":[{"accessKey":[],"appId":[]}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["orderId","collectionId","nftId","seller","price"],"properties":{"orderId":{"type":"integer","description":"Order's ID on-chain","example":1},"collectionId":{"type":"string","description":"NFT's collection id","example":"RG-02"},"nftId":{"type":"integer","description":"NFT's on-chain id","example":100},"seller":{"type":"string","description":"Seller's wallet address","example":"0x67e3dCfdD75e3cAcA226bAc307E7c2487012542a"},"price":{"type":"integer","description":"NFT's price","example":1000}},"example":{"orderId":10,"nftId":1,"collectionId":"RG-02","seller":"0x6939Acc50aac679117855F31E9D5EDE6F79f0D7D","price":1000}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/StoreOrder"}}},"example":{"code":0,"message":"Successfully","data":{"orderId":10,"collectionId":"RG-02","nftId":1,"price":"1000","seller":"0x6939Acc50aac679117855F31E9D5EDE6F79f0D7D","nft":{"_id":"63ae9716fb3f3cbf30a66ae6","userId":"d70d6443-de2f-4f0e-a023-4dbcbe056777","imageUrl":"https://rofi-game-01.b-cdn.net/item/1101.png","collectionId":"RG-02","type":"1101","name":"Thunder1","nftOwner":"0x687484E2744a1Df4fcB1a754A6fEb6ECba41540f","status":1,"server":1,"createdBy":"425188d5-4565-48b2-af78-abe35bdce92b","attributes":{"mdp":14,"dp":7,"earnPoint":1,"rarity":1},"createdAt":"2022-12-30T07:45:26.408Z","updatedAt":"2023-01-18T09:06:00.328Z","nftId":1,"price":null,"orderId":null,"id":"63ae9716fb3f3cbf30a66ae6"},"orderStatus":"Open","_id":"645382e7d44dd1d41123b998","createdAt":"2023-05-04T10:03:19.137Z","updatedAt":"2023-05-04T10:03:19.137Z"}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":400,"message":"Invalid packId"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/internal/order/update":{"post":{"summary":"Update price an order","tags":["Marketplace"],"security":[{"accessKey":[],"appId":[]}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["orderId","price"],"properties":{"orderId":{"type":"integer","description":"Order's ID on-chain","example":1},"price":{"type":"integer","description":"NFT's new price","example":2000}},"example":{"orderId":10,"price":2000}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/StoreOrder"}}},"example":{"code":0,"message":"Successfully","data":null}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":400,"message":"Invalid packId"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/internal/order/fill":{"post":{"summary":"Fulfill an NFT marketplace order","tags":["Marketplace"],"security":[{"accessKey":[],"appId":[]}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["orderId","buyer","userId"],"properties":{"orderId":{"type":"integer","description":"Order's ID on-chain","example":1},"buyer":{"type":"string","description":"Buyer's wallet address","example":"0x687484E2744a1Df4fcB1a754A6fEb6ECba41540f"},"userId":{"type":"string","format":"uuid","description":"ROFI user id"}},"example":{"orderId":11,"buyer":"0x687484E2744a1Df4fcB1a754A6fEb6ECba41540f","userId":"d70d6443-de2f-4f0e-a023-4dbcbe056777"}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/StoreOrder"}}},"example":{"code":0,"message":"Successfully","data":null}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":400,"message":"Invalid packId"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/internal/order/cancel":{"post":{"summary":"Cancel an NFT marketplace order","tags":["Marketplace"],"security":[{"accessKey":[],"appId":[]}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["orderId"],"properties":{"orderId":{"type":"integer","description":"Order's ID on-chain","example":1}},"example":{"orderId":10}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"type":"object","nullable":true,"default":null}}},"example":{"code":0,"message":"Successfully","data":null}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":400,"message":"Invalid packId"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/orders/{orderId}":{"get":{"summary":"Get an NFT marketplace order","tags":["Marketplace"],"parameters":[{"in":"path","name":"orderId","required":true,"schema":{"type":"integer"},"description":"Order's on-chain ID"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/MarketplaceOrder"}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":400,"message":"Invalid orderId"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/orders":{"get":{"summary":"Get NFT marketplace order list","tags":["Marketplace"],"parameters":[{"in":"query","name":"rarity","required":false,"schema":{"type":"integer","enum":[1,2,3,4,5]},"description":"Rarity's value of item"},{"in":"query","name":"page","required":false,"schema":{"type":"integer","default":1}},{"in":"query","name":"sort","required":false,"schema":{"type":"string"},"example":"-price"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/MarketplaceOrder"}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":400,"message":"Invalid orderId"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/packs/{id}":{"get":{"summary":"Get pack detail in store","tags":["Pack"],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Pack's packId"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"$ref":"#/components/schemas/Pack"}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/packs":{"get":{"summary":"Get pack list on Store","tags":["Pack"],"security":[{"bearerAuth":[]}],"parameters":[{"in":"query","name":"name","required":false,"schema":{"type":"string"},"description":"Item's name"},{"in":"query","name":"collectionId","required":false,"schema":{"type":"string"},"description":"Item's collectionId"},{"in":"query","name":"sort","required":false,"schema":{"type":"string"},"description":"Sort option","example":"-price"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"type":"object","properties":{"data":{"type":"array","items":{"$ref":"#/components/schemas/StoreOrder"}},"paginator":{"$ref":"#/components/schemas/Paginator"}}}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/game/packs/{id}":{"get":{"summary":"Get pack detail in game","tags":["Pack"],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Pack's packId"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"$ref":"#/components/schemas/Pack"}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/game/packs":{"get":{"summary":"Get pack list in game","tags":["Pack"],"security":[{"bearerAuth":[]}],"parameters":[{"in":"query","name":"name","required":false,"schema":{"type":"string"},"description":"Item's name"},{"in":"query","name":"collectionId","required":false,"schema":{"type":"string"},"description":"Item's collectionId"},{"in":"query","name":"sort","required":false,"schema":{"type":"string"},"description":"Sort option","example":"-price"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"type":"object","properties":{"data":{"type":"array","items":{"$ref":"#/components/schemas/StoreOrder"}},"paginator":{"$ref":"#/components/schemas/Paginator"}}}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/statistics/store":{"get":{"summary":"Get store statistic","tags":["Statistics"],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"data":{"type":"array","items":{"type":"object","properties":{"_id":{"type":"string"},"type":{"type":"string","enum":["STORE_ONE_DAYS","STORE_SEVEN_DAYS","STORE_THIRTY_DAYS"]},"info":{"type":"object"},"createdAt":{"type":"string","format":"date"},"updatedAt":{"type":"string","format":"date"}}}}},"example":{"data":[{"_id":"64070f95494afb850a7ab644","type":"STORE_ONE_DAYS","__v":0,"createdAt":"2023-03-07T10:19:01.642Z","from":"2023-05-03T09:05:00.003Z","info":{"totalVolume":0,"totalSale":0,"totalDiamondSale":0,"totalDiamondVolume":0,"totalIDLSale":0,"totalIDLVolume":0,"totalNFTSale":0,"totalNFTVolume":0},"to":"2023-05-04T09:05:00.003Z","updatedAt":"2023-05-04T09:05:00.100Z"},{"_id":"64070f95494afb850a7ab646","type":"STORE_SEVEN_DAYS","__v":0,"createdAt":"2023-03-07T10:19:01.652Z","from":"2023-04-27T09:05:00.003Z","info":{"totalSale":0,"totalVolume":0,"totalDiamondSale":0,"totalDiamondVolume":0,"totalIDLSale":0,"totalIDLVolume":0,"totalNFTSale":0,"totalNFTVolume":0},"to":"2023-05-04T09:05:00.003Z","updatedAt":"2023-05-04T09:05:00.106Z"},{"_id":"64070f95494afb850a7ab648","type":"STORE_THIRTY_DAYS","__v":0,"createdAt":"2023-03-07T10:19:01.656Z","from":"2023-04-04T09:05:00.003Z","info":{"totalSale":46,"totalVolume":1496.9,"totalDiamondSale":9,"totalDiamondVolume":419,"totalIDLSale":7,"totalIDLVolume":881.9,"totalNFTSale":30,"totalNFTVolume":196},"to":"2023-05-04T09:05:00.003Z","updatedAt":"2023-05-04T09:05:00.117Z"}]}}}}}}}},"/api/v1/public/store/orders":{"post":{"summary":"Create new store order","tags":["Store Order"],"security":[{"bearerAuth":[]}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["packId"],"properties":{"packId":{"type":"string","description":"Pack's ID user want to buy"}},"example":{"packId":"coin_diamond_120"}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/StoreOrder"}}},"example":{"code":0,"message":"Successfully","data":{"packId":"token_gidl_200","pack":{"_id":"63e2149efa96fb21174f9b2d","packId":"token_gidl_200","index":2,"collectionId":"RG-02","itemType":"gIDL","imageUrl":"https://rofi-game-01.b-cdn.net/tokens/IDL.png","videoUrl":null,"name":"gIDL","isHot":false,"isNew":false,"symbol":"BUSD","price":10,"isDisabled":false,"amountInStock":4999,"maxAmountInStock":5000}},"detail":{"amount":200,"type":"gIDL"},"gameDescription":null,"collectionDescription":null,"status":"Pending","userId":"d70d6443-de2f-4f0e-a023-4dbcbe056777","_id":"63e623b7043b1a356db0da19","createdAt":"2023-02-10T11:00:07.176Z","updatedAt":"2023-02-10T11:00:07.176Z"}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":400,"message":"Invalid packId"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}},"get":{"summary":"Get store order list for an user","tags":["Store Order"],"security":[{"bearerAuth":[]}],"parameters":[{"in":"query","name":"page","required":false,"schema":{"type":"integer","default":1},"description":"Page number"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"type":"object","properties":{"data":{"type":"array","items":{"$ref":"#/components/schemas/StoreOrder"}},"paginator":{"$ref":"#/components/schemas/Paginator"}}}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/store/orders/{id}/cancel":{"put":{"summary":"Cancel an order","tags":["Store Order"],"security":[{"bearerAuth":[]}],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Order's id"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/StoreOrder"}},"example":{"code":0,"message":"Successfully","data":{"_id":"644b731c86e82e9ddbef3cc4","packId":19402,"pack":{"_id":"644b731c86e82e9ddbef3cc1","packId":19402,"index":1,"collectionId":"RG-02","itemType":19402,"imageUrl":"https://cdn-iw-02.rofi.io/item/19402.jpg,","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4","name":"Fairy Shoes","isHot":false,"isNew":false,"symbol":"BUSD","price":22.5,"amountInStock":100,"maxAmountInStock":100,"isDisabled":false,"isSaleOnMarket":true,"gameDescription":"Idol World, as the worlds first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.","isSaleInGame":false,"version":1,"updatedAt":"2023-04-28T07:17:48.964Z"},"status":"Cancelled","userId":"c8f90be4-adf9-4691-bc51-f8793a919399","createdAt":"2023-04-28T07:17:48.983Z","updatedAt":"2023-04-28T07:17:48.992Z","paymentMethod":"token","exchangeRate":1,"currency":"BUSD","amount":22.5}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/store/orders/{id}/process":{"put":{"summary":"Process payment step for order","tags":["Store Order"],"security":[{"bearerAuth":[]}],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Order's id"}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["paymentMethod","currency","estimatedAmount"],"properties":{"paymentMethod":{"type":"string","enum":["help2pay","token","muchbetter","Xsolla"]},"currency":{"type":"string","enum":["BUSD","THB","VND","USD","IDR","PHP"]},"estimatedAmount":{"type":"number"},"externalOrderId":{"type":"string"}},"example":{"packId":19402,"paymentMethod":"token","currency":"BUSD","estimatedAmount":22.5}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"$ref":"#/components/schemas/StoreOrder"}},"example":{"code":0,"message":"Successfully","data":{"_id":"644b731c86e82e9ddbef3cc4","packId":19402,"pack":{"_id":"644b731c86e82e9ddbef3cc1","packId":19402,"index":1,"collectionId":"RG-02","itemType":19402,"imageUrl":"https://cdn-iw-02.rofi.io/item/19402.jpg,","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4","name":"Fairy Shoes","isHot":false,"isNew":false,"symbol":"BUSD","price":22.5,"amountInStock":100,"maxAmountInStock":100,"isDisabled":false,"isSaleOnMarket":true,"gameDescription":"Idol World, as the worlds first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.","isSaleInGame":false,"version":1,"updatedAt":"2023-04-28T07:17:48.964Z"},"status":"In Processing","userId":"c8f90be4-adf9-4691-bc51-f8793a919399","createdAt":"2023-04-28T07:17:48.983Z","updatedAt":"2023-04-28T07:17:48.992Z","paymentMethod":"token","exchangeRate":1,"currency":"BUSD","amount":22.5}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/public/store/orders/{id}":{"get":{"summary":"Get a store order","tags":["Store Order"],"security":[{"bearerAuth":[]}],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Store Order id"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"$ref":"#/components/schemas/StoreOrder"}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/internal/store/orders/{id}":{"get":{"summary":"Get a store order","tags":["Store Order"],"security":[{"accessKey":[],"appId":[]}],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Store Order id"}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"$ref":"#/components/schemas/StoreOrder"}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}},"put":{"summary":"Process payment step for order","tags":["Store Order"],"security":[{"accessKey":[],"appId":[]}],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Order's id"}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["status"],"properties":{"status":{"type":"string","enum":["Fail","Success","Invalid"]}},"example":{"status":"Success"}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"type":"array","items":{"$ref":"#/components/schemas/Item"}}}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}},"/api/v1/internal/store/orders/{id}/update-status-callback":{"put":{"summary":"Update order status from Payment Success to Success","tags":["Store Order"],"security":[{"accessKey":[],"appId":[]}],"parameters":[{"in":"path","name":"id","required":true,"schema":{"type":"string"},"description":"Order's id"}],"requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["status","gameTransactionId"],"properties":{"status":{"type":"string","enum":["Fail","Success"]},"gameTransactionId":{"type":"string"}},"example":{"status":"Success","gameTransactionId":"b290d0b2-d484-4979-81e7-7dd7084020e0"}}}}},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"number","example":0},"message":{"type":"string","example":"Successfully"},"data":{"type":"array","items":{"$ref":"#/components/schemas/Item"}}}},"example":{"code":0,"message":"Successfully","data":{"_id":"644ba3a05d02abf2df2c550e","packId":"coin_diamond_120","pack":{"packId":"coin_diamond_120","index":2,"collectionId":"RG-02","itemType":"901001","imageUrl":"https://cdn-iw-02.rofi.io/item/diamond-pack/diamond_1.png","videoUrl":null,"name":"Diamond","isHot":false,"isNew":false,"symbol":"BUSD","price":1.9,"isDisabled":false,"amountInStock":13,"maxAmountInStock":500,"detail":{"amount":120,"type":"diamond"},"gameDescription":null,"collectionDescription":null,"version":1,"isSaleOnMarket":true},"paymentMethod":"help2pay","amount":105.63,"exchangeRate":55.598501,"status":"Success","currency":"PHP","userId":"4434f645-fc96-431e-9767-89fea2201883","createdAt":"2023-04-28T10:44:48.272Z","updatedAt":"2023-04-28T10:44:48.290Z","gameTransactionId":"b290d0b2-d484-4979-81e7-7dd7084020e0"}}}}},"400":{"description":"Bad Request","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}}},"401":{"$ref":"#/components/responses/Unauthorized"}}}}},"components":{"schemas":{"StoreOrder":{"type":"object","properties":{"_id":{"type":"string","example":"644b86b45f7368427754eb62"},"packId":{"type":"string","example":19402},"pack":{"type":"object","$ref":"#/components/schemas/Pack"},"status":{"type":"string","example":"Pending"},"userId":{"type":"string","example":"2ae00ece-98b5-42b8-9134-d873ef31944b"},"createdAt":{"type":"string","example":"2023-04-28T08:41:24.509Z"},"updatedAt":{"type":"string","example":"2023-04-28T08:47:22.579Z"},"amount":{"type":"number","example":527558},"currency":{"type":"string","enum":["VND","THB","PHP","BUSD","USD"],"example":"VND"},"exchangeRate":{"type":"number","example":23447},"paymentMethod":{"type":"string","enum":["help2pay","Xsolla","muchbetter","token"],"example":"help2pay"}}},"MarketplaceOrder":{"type":"object","properties":{"_id":{"type":"string","example":"645382e7d44dd1d41123b998"},"orderId":{"type":"integer","example":10},"price":{"type":"integer","example":1000},"nftId":{"type":"integer","example":1},"nft":{"type":"object","$ref":"#/components/schemas/Item"},"orderStatus":{"type":"string","enum":["Open","Filled","Cancelled"]},"userId":{"type":"string","format":"uuid","example":"2ae00ece-98b5-42b8-9134-d873ef31944b"},"createdAt":{"type":"string","format":"date","example":"2023-04-28T08:41:24.509Z"},"updatedAt":{"type":"string","format":"date","example":"2023-04-28T08:47:22.579Z"}}},"Item":{"type":"object","properties":{"userId":{"type":"string"},"imageUrl":{"type":"string"},"videoUrl":{"type":"string"},"collectionId":{"type":"string"},"type":{"type":"string"},"name":{"type":"string"},"price":{"type":"number","nullable":true},"orderId":{"type":"string","nullable":true},"nftOwner":{"type":"string","nullable":true},"status":{"type":"number"},"server":{"type":"number"},"createdBy":{"type":"string"},"attributes":{"type":"object"},"gameDescription":{"type":"string"},"collectionDescription":{"type":"string"},"_id":{"type":"string"},"updatedAt":{"type":"string","format":"date"},"createdAt":{"type":"string","format":"date"},"nftId":{"type":"number","nullable":true},"id":{"type":"string"}},"example":{"userId":"2ae00ece-98b5-42b8-9134-d873ef31944b","imageUrl":"https://cdn-iw-02.rofi.io/item/19402.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4,","collectionId":"RG-02","type":19402,"name":"Fairy Shoes","price":null,"orderId":null,"nftOwner":null,"status":1,"server":1,"createdBy":"2ae00ece-98b5-42b8-9134-d873ef31944b","attributes":{"mdp":11,"dp":11,"earnPoint":26.4,"rarity":1,"type":"Foot"},"gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.","collectionDescription":"The Forest Gods Shoe - A piece of the Fairy outfit","_id":"644b881a6047ec0262300b17","id":"644b881a6047ec0262300b17","updatedAt":"2023-02-10T10:58:10.111Z","createdAt":"2023-04-28T08:47:22.509Z"}},"Pack":{"type":"object","properties":{"_id":{"type":"string","example":"6447991cf26fd2df6477fc01"},"packId":{"type":"string","example":19402},"index":{"type":"number","example":1},"collectionId":{"type":"string","example":"RG-02"},"itemType":{"type":"string"},"detail":{"type":"object"},"imageUrl":{"type":"string"},"videoUrl":{"type":"string"},"name":{"type":"string"},"symbol":{"type":"string"},"isHot":{"type":"boolean"},"isNew":{"type":"boolean"},"isDisabled":{"type":"boolean"},"price":{"type":"number"},"amountInStock":{"type":"number"},"maxAmountInStock":{"type":"number"},"gameDescription":{"type":"string"},"collectionDescription":{"type":"string"},"updatedAt":{"type":"string","format":"date"}},"example":{"_id":"6447991cf26fd2df6477fc01","packId":19402,"index":1,"collectionId":"RG-02","itemType":19402,"imageUrl":"https://cdn-iw-02.rofi.io/item/19402.jpg","videoUrl":"https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4","name":"Fairy Shoes","isHot":false,"isNew":false,"detail":{"type":"Foot","rarity":1,"itemDescription":"The Forest Gods Shoe - A piece of the Fairy outfit","dp":"11-50,","earnPoint":"15.0-50.0,","mdp":"11-50"},"symbol":"BUSD","price":10,"isDisabled":false,"amountInStock":100,"maxAmountInStock":100,"gameDescription":"Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.","collectionDescription":"","updatedAt":"2023-02-10T10:58:10.111Z"}},"Airdrop":{"type":"object","properties":{"_id":{"type":"string","example":"64532ead060428fa566c9fbc"},"userId":{"type":"string","format":"uuid","example":"2ae00ece-98b5-42b8-9134-d873ef31944b"},"itemId":{"type":"string","example":"64532ead1b83594acec1f79f"},"event":{"type":"string","example":"RG-02"},"createdAt":{"type":"string","format":"date"},"updatedAt":{"type":"string","format":"date"}}},"AirdropEvent":{"type":"object","properties":{"_id":{"type":"string","example":"64532ead060428fa566c9fbc"},"event":{"type":"string","example":"RG-02"},"maxAmount":{"type":"integer"},"remainingAmount":{"type":"integer"},"item":{"type":"object"},"createdAt":{"type":"string","format":"date"},"updatedAt":{"type":"string","format":"date"}}},"Paginator":{"type":"object","properties":{"total":{"type":"integer","example":1},"limit":{"type":"integer","example":10},"totalPages":{"type":"integer","example":1},"currentPage":{"type":"integer","nullable":true,"example":null},"slNo":{"type":"number","nullable":true,"example":null},"hasPrevPage":{"type":"boolean","example":false},"hasNextPage":{"type":"boolean","example":false},"prev":{"type":"integer","nullable":true,"example":null},"next":{"type":"integer","nullable":true,"example":null}}},"Error":{"type":"object","properties":{"code":{"type":"number"},"message":{"type":"string"},"data":{"type":"object","nullable":true},"errors":{"type":"array","items":{"type":"object","properties":{"value":{"type":"string"},"msg":{"type":"string"},"param":{"type":"string"},"location":{"type":"string"}}}}}}},"responses":{"Unauthorized":{"description":"Unauthorized","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":401,"message":"Please authenticate"}}}},"Forbidden":{"description":"Forbidden","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":403,"message":"Forbidden"}}}},"NotFound":{"description":"Not found","content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"},"example":{"code":404,"message":"Not found"}}}}},"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"},"accessKey":{"type":"apiKey","in":"header","name":"access_key"},"appId":{"type":"apiKey","in":"header","name":"app_id"}}},"tags":[{"name":"Airdrop Event","description":"Airdrop event information"},{"name":"Airdrop","description":"Airdrop"},{"name":"Marketplace","description":"NFT Marketplace order APIs"},{"name":"Pack","description":"Pack information in Store"},{"name":"Statistics","description":"Statistic APIs"},{"name":"Store Order","description":"Order in store"}]}
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Rofi Marketplace",
+    "version": "1.0.0",
+    "description": "API connect to Rofi NFT - Rofi Platform",
+    "contact": {
+      "name": "Rofi NFT",
+      "url": "https://app.rofi.games/",
+      "email": "tanlm@bravezone.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8892",
+      "description": "Development server"
+    },
+    {
+      "url": "http://app-api-dev.rofi.games",
+      "description": "Test server"
+    }
+  ],
+  "paths": {
+    "/public/airdrop-event/{event}": {
+      "get": {
+        "summary": "Get airdrop event configuration",
+        "tags": [
+          "Airdrop Event"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Event code"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AirdropEvent"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": null,
+                  "data": [
+                    {
+                      "_id": "6433dc1dada92d1e1bba668b",
+                      "event": "RG-02",
+                      "remainingAmount": 15499,
+                      "maxAmount": 15500,
+                      "item": {
+                        "packId": "airdrop_78288",
+                        "index": 1,
+                        "collectionId": "RG-02",
+                        "itemType": "78288",
+                        "imageUrl": "https://cdn-iw-02.rofi.io/item/78288.jpg",
+                        "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/78288.mp4",
+                        "name": "Royal Sword",
+                        "isHot": false,
+                        "isNew": false,
+                        "symbol": "IDL",
+                        "isDisabled": false,
+                        "detail": {
+                          "type": "Accessory",
+                          "rarity": 1,
+                          "mdp": 475,
+                          "dp": 475,
+                          "earnPoint": 1,
+                          "itemDescription": "The holy sword that attests to the strength of the royal family - A piece of the Royal outfit"
+                        },
+                        "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.",
+                        "collectionDescription": "The Royal costume emulates medieval emperors and queens. Transform into kings and queens with the main white outfit."
+                      },
+                      "createdAt": "2023-04-10T09:51:25.620Z",
+                      "updatedAt": "2023-04-12T08:50:45.237Z"
+                    },
+                    {
+                      "_id": "6433dc2aada92d1e1bba668d",
+                      "event": "RG-02",
+                      "remainingAmount": 15499,
+                      "maxAmount": 15500,
+                      "item": {
+                        "index": 1,
+                        "collectionId": "RG-02",
+                        "itemType": "78001",
+                        "imageUrl": "https://cdn-iw-02.rofi.io/item/78001.jpg",
+                        "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/78001.mp4",
+                        "name": "Ice Lyre",
+                        "isHot": false,
+                        "isNew": false,
+                        "symbol": "IDL",
+                        "isDisabled": false,
+                        "detail": {
+                          "type": "Accessory",
+                          "rarity": 1,
+                          "mdp": 475,
+                          "dp": 475,
+                          "earnPoint": 1,
+                          "itemDescription": "Accessory -A  piece of the Ice Prince outfit"
+                        },
+                        "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.",
+                        "collectionDescription": "Ice Prince is an outfit set with striking blue accents with pure white accents. An outfit with many beautiful and fanciful details."
+                      },
+                      "createdAt": "2023-04-10T09:51:38.933Z",
+                      "updatedAt": "2023-04-12T08:57:35.906Z"
+                    },
+                    {
+                      "_id": "6433dc31ada92d1e1bba668f",
+                      "event": "RG-02",
+                      "remainingAmount": 15499,
+                      "maxAmount": 15500,
+                      "item": {
+                        "index": 1,
+                        "collectionId": "RG-02",
+                        "itemType": "78197",
+                        "imageUrl": "https://cdn-iw-02.rofi.io/item/78197.jpg",
+                        "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/78197.mp4",
+                        "name": "Black Cat Scepter",
+                        "isHot": false,
+                        "isNew": false,
+                        "symbol": "BUSD",
+                        "isDisabled": false,
+                        "detail": {
+                          "type": "Accessory",
+                          "rarity": 1,
+                          "mdp": 475,
+                          "dp": 475,
+                          "earnPoint": 1,
+                          "itemDescription": "Supreme Scepter -  A piece of the Black Cat outfit"
+                        },
+                        "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.",
+                        "collectionDescription": "Who doesn't fall in love with cute cat shapes? Black Cat outfit for cat lovers here."
+                      },
+                      "createdAt": "2023-04-10T09:51:45.929Z",
+                      "updatedAt": "2023-04-12T11:18:40.369Z"
+                    },
+                    {
+                      "_id": "6433dc36ada92d1e1bba6691",
+                      "event": "RG-02",
+                      "remainingAmount": 1000,
+                      "maxAmount": 1000,
+                      "item": {
+                        "index": 1,
+                        "collectionId": "RG-02",
+                        "itemType": "31439",
+                        "imageUrl": "https://cdn-iw-02.rofi.io/item/31439.jpg",
+                        "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/31439.mp4",
+                        "name": "Fairy Wings",
+                        "isHot": false,
+                        "isNew": false,
+                        "symbol": "IDL",
+                        "isDisabled": false,
+                        "detail": {
+                          "type": "Wing",
+                          "rarity": 1,
+                          "mdp": 475,
+                          "dp": 475,
+                          "earnPoint": 2,
+                          "itemDescription": "The Wings of the Forest Gods - A piece of the Fairy costume"
+                        },
+                        "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.",
+                        "collectionDescription": "A costume version of the incarnation of the forest fairies."
+                      },
+                      "createdAt": "2023-04-10T09:51:50.981Z",
+                      "updatedAt": "2023-04-10T09:51:50.981Z"
+                    },
+                    {
+                      "_id": "6433dc3cada92d1e1bba6693",
+                      "event": "RG-02",
+                      "remainingAmount": 2500,
+                      "maxAmount": 2500,
+                      "item": {
+                        "index": 1,
+                        "collectionId": "RG-02",
+                        "itemType": "89250",
+                        "imageUrl": "https://cdn-iw-02.rofi.io/item/89250.jpg",
+                        "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/89250.mp4",
+                        "name": "Green Phoenix Nest",
+                        "isHot": false,
+                        "isNew": false,
+                        "symbol": "IDL",
+                        "isDisabled": false,
+                        "detail": {
+                          "type": "Vehicle",
+                          "rarity": 1,
+                          "mdp": 475,
+                          "dp": 475,
+                          "earnPoint": 1,
+                          "itemDescription": "Vehicle featured with separate seat and phoenix- A piece of the Green Phoenix outfit"
+                        },
+                        "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.",
+                        "collectionDescription": "The costume is designed with the inspiration of the wonderful phoenix. One of Idol World's most sparkly outfits"
+                      },
+                      "createdAt": "2023-04-10T09:51:56.772Z",
+                      "updatedAt": "2023-04-10T09:51:56.772Z"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 4501,
+                  "message": "The account has received airdrop item before"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/public/airdrop/RG-02": {
+      "post": {
+        "summary": "Receive airdrop item",
+        "tags": [
+          "Airdrop"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "airdrop": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Airdrop"
+                        },
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Item"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": {
+                    "airdrop": {
+                      "userId": "2ae00ece-98b5-42b8-9134-d873ef31944b",
+                      "event": "RG-02",
+                      "itemId": "64532ead1b83594acec1f79f",
+                      "_id": "64532ead060428fa566c9fbc",
+                      "createdAt": "2023-05-04T04:03:57.365Z",
+                      "updatedAt": "2023-05-04T04:03:57.365Z"
+                    },
+                    "items": {
+                      "userId": "2ae00ece-98b5-42b8-9134-d873ef31944b",
+                      "imageUrl": "https://cdn-iw-02.rofi.io/item/78001.jpg",
+                      "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/78001.mp4",
+                      "collectionId": "RG-02",
+                      "type": "78001",
+                      "name": "Ice Lyre",
+                      "price": null,
+                      "orderId": null,
+                      "nftOwner": null,
+                      "status": 1,
+                      "server": 1,
+                      "createdBy": "2ae00ece-98b5-42b8-9134-d873ef31944b",
+                      "attributes": {
+                        "mdp": 475,
+                        "dp": 475,
+                        "earnPoint": 1,
+                        "rarity": 1,
+                        "type": "Accessory"
+                      },
+                      "collectionDescription": "Ice Prince is an outfit set with striking blue accents with pure white accents. An outfit with many beautiful and fanciful details.",
+                      "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements: hot-trending music, smooth characters, and amazing dance moves.",
+                      "itemDescription": "Accessory -A  piece of the Ice Prince outfit",
+                      "source": "airdrop",
+                      "_id": "64532ead1b83594acec1f79f",
+                      "createdAt": "2023-05-04T04:03:57.329Z",
+                      "updatedAt": "2023-05-04T04:03:57.329Z",
+                      "nftId": null,
+                      "id": "64532ead1b83594acec1f79f"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 4501,
+                  "message": "The account has received airdrop item before"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get airdrop received",
+        "tags": [
+          "Airdrop"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/Airdrop"
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": {
+                    "_id": "64532ead060428fa566c9fbc",
+                    "userId": "2ae00ece-98b5-42b8-9134-d873ef31944b",
+                    "event": "RG-02",
+                    "itemId": "64532ead1b83594acec1f79f",
+                    "createdAt": "2023-05-04T04:03:57.365Z",
+                    "updatedAt": "2023-05-04T04:03:57.365Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 4501,
+                  "message": "The account has received airdrop item before"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/order/create": {
+      "post": {
+        "summary": "Create new store order",
+        "tags": [
+          "Marketplace"
+        ],
+        "security": [
+          {
+            "accessKey": [],
+            "appId": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "orderId",
+                  "collectionId",
+                  "nftId",
+                  "seller",
+                  "price"
+                ],
+                "properties": {
+                  "orderId": {
+                    "type": "integer",
+                    "description": "Order's ID on-chain",
+                    "example": 1
+                  },
+                  "collectionId": {
+                    "type": "string",
+                    "description": "NFT's collection id",
+                    "example": "RG-02"
+                  },
+                  "nftId": {
+                    "type": "integer",
+                    "description": "NFT's on-chain id",
+                    "example": 100
+                  },
+                  "seller": {
+                    "type": "string",
+                    "description": "Seller's wallet address",
+                    "example": "0x67e3dCfdD75e3cAcA226bAc307E7c2487012542a"
+                  },
+                  "price": {
+                    "type": "integer",
+                    "description": "NFT's price",
+                    "example": 1000
+                  }
+                },
+                "example": {
+                  "orderId": 10,
+                  "nftId": 1,
+                  "collectionId": "RG-02",
+                  "seller": "0x6939Acc50aac679117855F31E9D5EDE6F79f0D7D",
+                  "price": 1000
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": {
+                    "orderId": 10,
+                    "collectionId": "RG-02",
+                    "nftId": 1,
+                    "price": "1000",
+                    "seller": "0x6939Acc50aac679117855F31E9D5EDE6F79f0D7D",
+                    "nft": {
+                      "_id": "63ae9716fb3f3cbf30a66ae6",
+                      "userId": "d70d6443-de2f-4f0e-a023-4dbcbe056777",
+                      "imageUrl": "https://rofi-game-01.b-cdn.net/item/1101.png",
+                      "collectionId": "RG-02",
+                      "type": "1101",
+                      "name": "Thunder1",
+                      "nftOwner": "0x687484E2744a1Df4fcB1a754A6fEb6ECba41540f",
+                      "status": 1,
+                      "server": 1,
+                      "createdBy": "425188d5-4565-48b2-af78-abe35bdce92b",
+                      "attributes": {
+                        "mdp": 14,
+                        "dp": 7,
+                        "earnPoint": 1,
+                        "rarity": 1
+                      },
+                      "createdAt": "2022-12-30T07:45:26.408Z",
+                      "updatedAt": "2023-01-18T09:06:00.328Z",
+                      "nftId": 1,
+                      "price": null,
+                      "orderId": null,
+                      "id": "63ae9716fb3f3cbf30a66ae6"
+                    },
+                    "orderStatus": "Open",
+                    "_id": "645382e7d44dd1d41123b998",
+                    "createdAt": "2023-05-04T10:03:19.137Z",
+                    "updatedAt": "2023-05-04T10:03:19.137Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Invalid packId"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/order/update": {
+      "post": {
+        "summary": "Update price an order",
+        "tags": [
+          "Marketplace"
+        ],
+        "security": [
+          {
+            "accessKey": [],
+            "appId": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "orderId",
+                  "price"
+                ],
+                "properties": {
+                  "orderId": {
+                    "type": "integer",
+                    "description": "Order's ID on-chain",
+                    "example": 1
+                  },
+                  "price": {
+                    "type": "integer",
+                    "description": "NFT's new price",
+                    "example": 2000
+                  }
+                },
+                "example": {
+                  "orderId": 10,
+                  "price": 2000
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Invalid packId"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/order/fill": {
+      "post": {
+        "summary": "Fulfill an NFT marketplace order",
+        "tags": [
+          "Marketplace"
+        ],
+        "security": [
+          {
+            "accessKey": [],
+            "appId": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "orderId",
+                  "buyer",
+                  "userId"
+                ],
+                "properties": {
+                  "orderId": {
+                    "type": "integer",
+                    "description": "Order's ID on-chain",
+                    "example": 1
+                  },
+                  "buyer": {
+                    "type": "string",
+                    "description": "Buyer's wallet address",
+                    "example": "0x687484E2744a1Df4fcB1a754A6fEb6ECba41540f"
+                  },
+                  "userId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "ROFI user id"
+                  }
+                },
+                "example": {
+                  "orderId": 11,
+                  "buyer": "0x687484E2744a1Df4fcB1a754A6fEb6ECba41540f",
+                  "userId": "d70d6443-de2f-4f0e-a023-4dbcbe056777"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Invalid packId"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/order/cancel": {
+      "post": {
+        "summary": "Cancel an NFT marketplace order",
+        "tags": [
+          "Marketplace"
+        ],
+        "security": [
+          {
+            "accessKey": [],
+            "appId": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "orderId"
+                ],
+                "properties": {
+                  "orderId": {
+                    "type": "integer",
+                    "description": "Order's ID on-chain",
+                    "example": 1
+                  }
+                },
+                "example": {
+                  "orderId": 10
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "nullable": true,
+                      "default": null
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": null
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Invalid packId"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/orders/{orderId}": {
+      "get": {
+        "summary": "Get an NFT marketplace order",
+        "tags": [
+          "Marketplace"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orderId",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Order's on-chain ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/MarketplaceOrder"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Invalid orderId"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/orders": {
+      "get": {
+        "summary": "Get NFT marketplace order list",
+        "tags": [
+          "Marketplace"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "rarity",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "enum": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            "description": "Rarity's value of item"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "-price"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/MarketplaceOrder"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Invalid orderId"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/packs/{id}": {
+      "get": {
+        "summary": "Get pack detail in store",
+        "tags": [
+          "Pack"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Pack's packId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Pack"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/packs": {
+      "get": {
+        "summary": "Get pack list on Store",
+        "tags": [
+          "Pack"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Item's name"
+          },
+          {
+            "in": "query",
+            "name": "collectionId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Item's collectionId"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Sort option",
+            "example": "-price"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/StoreOrder"
+                          }
+                        },
+                        "paginator": {
+                          "$ref": "#/components/schemas/Paginator"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/game/packs/{id}": {
+      "get": {
+        "summary": "Get pack detail in game",
+        "tags": [
+          "Pack"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Pack's packId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Pack"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/game/packs": {
+      "get": {
+        "summary": "Get pack list in game",
+        "tags": [
+          "Pack"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Item's name"
+          },
+          {
+            "in": "query",
+            "name": "collectionId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Item's collectionId"
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Sort option",
+            "example": "-price"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/StoreOrder"
+                          }
+                        },
+                        "paginator": {
+                          "$ref": "#/components/schemas/Paginator"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/statistics/store": {
+      "get": {
+        "summary": "Get store statistic",
+        "tags": [
+          "Statistics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "_id": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "STORE_ONE_DAYS",
+                              "STORE_SEVEN_DAYS",
+                              "STORE_THIRTY_DAYS"
+                            ]
+                          },
+                          "info": {
+                            "type": "object"
+                          },
+                          "createdAt": {
+                            "type": "string",
+                            "format": "date"
+                          },
+                          "updatedAt": {
+                            "type": "string",
+                            "format": "date"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "example": {
+                    "data": [
+                      {
+                        "_id": "64070f95494afb850a7ab644",
+                        "type": "STORE_ONE_DAYS",
+                        "__v": 0,
+                        "createdAt": "2023-03-07T10:19:01.642Z",
+                        "from": "2023-05-03T09:05:00.003Z",
+                        "info": {
+                          "totalVolume": 0,
+                          "totalSale": 0,
+                          "totalDiamondSale": 0,
+                          "totalDiamondVolume": 0,
+                          "totalIDLSale": 0,
+                          "totalIDLVolume": 0,
+                          "totalNFTSale": 0,
+                          "totalNFTVolume": 0
+                        },
+                        "to": "2023-05-04T09:05:00.003Z",
+                        "updatedAt": "2023-05-04T09:05:00.100Z"
+                      },
+                      {
+                        "_id": "64070f95494afb850a7ab646",
+                        "type": "STORE_SEVEN_DAYS",
+                        "__v": 0,
+                        "createdAt": "2023-03-07T10:19:01.652Z",
+                        "from": "2023-04-27T09:05:00.003Z",
+                        "info": {
+                          "totalSale": 0,
+                          "totalVolume": 0,
+                          "totalDiamondSale": 0,
+                          "totalDiamondVolume": 0,
+                          "totalIDLSale": 0,
+                          "totalIDLVolume": 0,
+                          "totalNFTSale": 0,
+                          "totalNFTVolume": 0
+                        },
+                        "to": "2023-05-04T09:05:00.003Z",
+                        "updatedAt": "2023-05-04T09:05:00.106Z"
+                      },
+                      {
+                        "_id": "64070f95494afb850a7ab648",
+                        "type": "STORE_THIRTY_DAYS",
+                        "__v": 0,
+                        "createdAt": "2023-03-07T10:19:01.656Z",
+                        "from": "2023-04-04T09:05:00.003Z",
+                        "info": {
+                          "totalSale": 46,
+                          "totalVolume": 1496.9,
+                          "totalDiamondSale": 9,
+                          "totalDiamondVolume": 419,
+                          "totalIDLSale": 7,
+                          "totalIDLVolume": 881.9,
+                          "totalNFTSale": 30,
+                          "totalNFTVolume": 196
+                        },
+                        "to": "2023-05-04T09:05:00.003Z",
+                        "updatedAt": "2023-05-04T09:05:00.117Z"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/public/store/orders": {
+      "post": {
+        "summary": "Create new store order",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "packId"
+                ],
+                "properties": {
+                  "packId": {
+                    "type": "string",
+                    "description": "Pack's ID user want to buy"
+                  }
+                },
+                "example": {
+                  "packId": "coin_diamond_120"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": {
+                    "packId": "token_gidl_200",
+                    "pack": {
+                      "_id": "63e2149efa96fb21174f9b2d",
+                      "packId": "token_gidl_200",
+                      "index": 2,
+                      "collectionId": "RG-02",
+                      "itemType": "gIDL",
+                      "imageUrl": "https://rofi-game-01.b-cdn.net/tokens/IDL.png",
+                      "videoUrl": null,
+                      "name": "gIDL",
+                      "isHot": false,
+                      "isNew": false,
+                      "symbol": "BUSD",
+                      "price": 10,
+                      "isDisabled": false,
+                      "amountInStock": 4999,
+                      "maxAmountInStock": 5000
+                    }
+                  },
+                  "detail": {
+                    "amount": 200,
+                    "type": "gIDL"
+                  },
+                  "gameDescription": null,
+                  "collectionDescription": null,
+                  "status": "Pending",
+                  "userId": "d70d6443-de2f-4f0e-a023-4dbcbe056777",
+                  "_id": "63e623b7043b1a356db0da19",
+                  "createdAt": "2023-02-10T11:00:07.176Z",
+                  "updatedAt": "2023-02-10T11:00:07.176Z"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "Invalid packId"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get store order list for an user",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "description": "Page number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/StoreOrder"
+                          }
+                        },
+                        "paginator": {
+                          "$ref": "#/components/schemas/Paginator"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/store/orders/{id}/cancel": {
+      "put": {
+        "summary": "Cancel an order",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Order's id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  },
+                  "example": {
+                    "code": 0,
+                    "message": "Successfully",
+                    "data": {
+                      "_id": "644b731c86e82e9ddbef3cc4",
+                      "packId": 19402,
+                      "pack": {
+                        "_id": "644b731c86e82e9ddbef3cc1",
+                        "packId": 19402,
+                        "index": 1,
+                        "collectionId": "RG-02",
+                        "itemType": 19402,
+                        "imageUrl": "https://cdn-iw-02.rofi.io/item/19402.jpg,",
+                        "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4",
+                        "name": "Fairy Shoes",
+                        "isHot": false,
+                        "isNew": false,
+                        "symbol": "BUSD",
+                        "price": 22.5,
+                        "amountInStock": 100,
+                        "maxAmountInStock": 100,
+                        "isDisabled": false,
+                        "isSaleOnMarket": true,
+                        "gameDescription": "Idol World, as the worlds first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.",
+                        "isSaleInGame": false,
+                        "version": 1,
+                        "updatedAt": "2023-04-28T07:17:48.964Z"
+                      },
+                      "status": "Cancelled",
+                      "userId": "c8f90be4-adf9-4691-bc51-f8793a919399",
+                      "createdAt": "2023-04-28T07:17:48.983Z",
+                      "updatedAt": "2023-04-28T07:17:48.992Z",
+                      "paymentMethod": "token",
+                      "exchangeRate": 1,
+                      "currency": "BUSD",
+                      "amount": 22.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/store/orders/{id}/process": {
+      "put": {
+        "summary": "Process payment step for order",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Order's id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "paymentMethod",
+                  "currency",
+                  "estimatedAmount"
+                ],
+                "properties": {
+                  "paymentMethod": {
+                    "type": "string",
+                    "enum": [
+                      "help2pay",
+                      "token",
+                      "muchbetter",
+                      "Xsolla"
+                    ]
+                  },
+                  "currency": {
+                    "type": "string",
+                    "enum": [
+                      "BUSD",
+                      "THB",
+                      "VND",
+                      "USD",
+                      "IDR",
+                      "PHP"
+                    ]
+                  },
+                  "estimatedAmount": {
+                    "type": "number"
+                  },
+                  "externalOrderId": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "packId": 19402,
+                  "paymentMethod": "token",
+                  "currency": "BUSD",
+                  "estimatedAmount": 22.5
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  },
+                  "example": {
+                    "code": 0,
+                    "message": "Successfully",
+                    "data": {
+                      "_id": "644b731c86e82e9ddbef3cc4",
+                      "packId": 19402,
+                      "pack": {
+                        "_id": "644b731c86e82e9ddbef3cc1",
+                        "packId": 19402,
+                        "index": 1,
+                        "collectionId": "RG-02",
+                        "itemType": 19402,
+                        "imageUrl": "https://cdn-iw-02.rofi.io/item/19402.jpg,",
+                        "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4",
+                        "name": "Fairy Shoes",
+                        "isHot": false,
+                        "isNew": false,
+                        "symbol": "BUSD",
+                        "price": 22.5,
+                        "amountInStock": 100,
+                        "maxAmountInStock": 100,
+                        "isDisabled": false,
+                        "isSaleOnMarket": true,
+                        "gameDescription": "Idol World, as the worlds first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.",
+                        "isSaleInGame": false,
+                        "version": 1,
+                        "updatedAt": "2023-04-28T07:17:48.964Z"
+                      },
+                      "status": "In Processing",
+                      "userId": "c8f90be4-adf9-4691-bc51-f8793a919399",
+                      "createdAt": "2023-04-28T07:17:48.983Z",
+                      "updatedAt": "2023-04-28T07:17:48.992Z",
+                      "paymentMethod": "token",
+                      "exchangeRate": 1,
+                      "currency": "BUSD",
+                      "amount": 22.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/public/store/orders/{id}": {
+      "get": {
+        "summary": "Get a store order",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Store Order id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/store/orders/{id}": {
+      "get": {
+        "summary": "Get a store order",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "accessKey": [],
+            "appId": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Store Order id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/StoreOrder"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "summary": "Process payment step for order",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "accessKey": [],
+            "appId": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Order's id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "status"
+                ],
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "Fail",
+                      "Success",
+                      "Invalid"
+                    ]
+                  }
+                },
+                "example": {
+                  "status": "Success"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Item"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/v1/internal/store/orders/{id}/update-status-callback": {
+      "put": {
+        "summary": "Update order status from Payment Success to Success",
+        "tags": [
+          "Store Order"
+        ],
+        "security": [
+          {
+            "accessKey": [],
+            "appId": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Order's id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "status",
+                  "gameTransactionId"
+                ],
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "Fail",
+                      "Success"
+                    ]
+                  },
+                  "gameTransactionId": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "status": "Success",
+                  "gameTransactionId": "b290d0b2-d484-4979-81e7-7dd7084020e0"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Item"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "message": "Successfully",
+                  "data": {
+                    "_id": "644ba3a05d02abf2df2c550e",
+                    "packId": "coin_diamond_120",
+                    "pack": {
+                      "packId": "coin_diamond_120",
+                      "index": 2,
+                      "collectionId": "RG-02",
+                      "itemType": "901001",
+                      "imageUrl": "https://cdn-iw-02.rofi.io/item/diamond-pack/diamond_1.png",
+                      "videoUrl": null,
+                      "name": "Diamond",
+                      "isHot": false,
+                      "isNew": false,
+                      "symbol": "BUSD",
+                      "price": 1.9,
+                      "isDisabled": false,
+                      "amountInStock": 13,
+                      "maxAmountInStock": 500,
+                      "detail": {
+                        "amount": 120,
+                        "type": "diamond"
+                      },
+                      "gameDescription": null,
+                      "collectionDescription": null,
+                      "version": 1,
+                      "isSaleOnMarket": true
+                    },
+                    "paymentMethod": "help2pay",
+                    "amount": 105.63,
+                    "exchangeRate": 55.598501,
+                    "status": "Success",
+                    "currency": "PHP",
+                    "userId": "4434f645-fc96-431e-9767-89fea2201883",
+                    "createdAt": "2023-04-28T10:44:48.272Z",
+                    "updatedAt": "2023-04-28T10:44:48.290Z",
+                    "gameTransactionId": "b290d0b2-d484-4979-81e7-7dd7084020e0"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StoreOrder": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "644b86b45f7368427754eb62"
+          },
+          "packId": {
+            "type": "string",
+            "example": 19402
+          },
+          "pack": {
+            "type": "object",
+            "$ref": "#/components/schemas/Pack"
+          },
+          "status": {
+            "type": "string",
+            "example": "Pending"
+          },
+          "userId": {
+            "type": "string",
+            "example": "2ae00ece-98b5-42b8-9134-d873ef31944b"
+          },
+          "createdAt": {
+            "type": "string",
+            "example": "2023-04-28T08:41:24.509Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "example": "2023-04-28T08:47:22.579Z"
+          },
+          "amount": {
+            "type": "number",
+            "example": 527558
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "VND",
+              "THB",
+              "PHP",
+              "BUSD",
+              "USD"
+            ],
+            "example": "VND"
+          },
+          "exchangeRate": {
+            "type": "number",
+            "example": 23447
+          },
+          "paymentMethod": {
+            "type": "string",
+            "enum": [
+              "help2pay",
+              "Xsolla",
+              "muchbetter",
+              "token"
+            ],
+            "example": "help2pay"
+          }
+        }
+      },
+      "MarketplaceOrder": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "645382e7d44dd1d41123b998"
+          },
+          "orderId": {
+            "type": "integer",
+            "example": 10
+          },
+          "price": {
+            "type": "integer",
+            "example": 1000
+          },
+          "nftId": {
+            "type": "integer",
+            "example": 1
+          },
+          "nft": {
+            "type": "object",
+            "$ref": "#/components/schemas/Item"
+          },
+          "orderStatus": {
+            "type": "string",
+            "enum": [
+              "Open",
+              "Filled",
+              "Cancelled"
+            ]
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "2ae00ece-98b5-42b8-9134-d873ef31944b"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date",
+            "example": "2023-04-28T08:41:24.509Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date",
+            "example": "2023-04-28T08:47:22.579Z"
+          }
+        }
+      },
+      "Item": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "videoUrl": {
+            "type": "string"
+          },
+          "collectionId": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "nullable": true
+          },
+          "nftOwner": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "number"
+          },
+          "server": {
+            "type": "number"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object"
+          },
+          "gameDescription": {
+            "type": "string"
+          },
+          "collectionDescription": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date"
+          },
+          "nftId": {
+            "type": "number",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "userId": "2ae00ece-98b5-42b8-9134-d873ef31944b",
+          "imageUrl": "https://cdn-iw-02.rofi.io/item/19402.jpg",
+          "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4,",
+          "collectionId": "RG-02",
+          "type": 19402,
+          "name": "Fairy Shoes",
+          "price": null,
+          "orderId": null,
+          "nftOwner": null,
+          "status": 1,
+          "server": 1,
+          "createdBy": "2ae00ece-98b5-42b8-9134-d873ef31944b",
+          "attributes": {
+            "mdp": 11,
+            "dp": 11,
+            "earnPoint": 26.4,
+            "rarity": 1,
+            "type": "Foot"
+          },
+          "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.",
+          "collectionDescription": "The Forest Gods Shoe - A piece of the Fairy outfit",
+          "_id": "644b881a6047ec0262300b17",
+          "id": "644b881a6047ec0262300b17",
+          "updatedAt": "2023-02-10T10:58:10.111Z",
+          "createdAt": "2023-04-28T08:47:22.509Z"
+        }
+      },
+      "Pack": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "6447991cf26fd2df6477fc01"
+          },
+          "packId": {
+            "type": "string",
+            "example": 19402
+          },
+          "index": {
+            "type": "number",
+            "example": 1
+          },
+          "collectionId": {
+            "type": "string",
+            "example": "RG-02"
+          },
+          "itemType": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "object"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "videoUrl": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "isHot": {
+            "type": "boolean"
+          },
+          "isNew": {
+            "type": "boolean"
+          },
+          "isDisabled": {
+            "type": "boolean"
+          },
+          "price": {
+            "type": "number"
+          },
+          "amountInStock": {
+            "type": "number"
+          },
+          "maxAmountInStock": {
+            "type": "number"
+          },
+          "gameDescription": {
+            "type": "string"
+          },
+          "collectionDescription": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "example": {
+          "_id": "6447991cf26fd2df6477fc01",
+          "packId": 19402,
+          "index": 1,
+          "collectionId": "RG-02",
+          "itemType": 19402,
+          "imageUrl": "https://cdn-iw-02.rofi.io/item/19402.jpg",
+          "videoUrl": "https://cdn-iw-02.rofi.io/videos/rg_01_01/19402.mp4",
+          "name": "Fairy Shoes",
+          "isHot": false,
+          "isNew": false,
+          "detail": {
+            "type": "Foot",
+            "rarity": 1,
+            "itemDescription": "The Forest Gods Shoe - A piece of the Fairy outfit",
+            "dp": "11-50,",
+            "earnPoint": "15.0-50.0,",
+            "mdp": "11-50"
+          },
+          "symbol": "BUSD",
+          "price": 10,
+          "isDisabled": false,
+          "amountInStock": 100,
+          "maxAmountInStock": 100,
+          "gameDescription": "Idol World, as the world's first 3D music game appears on Blockchain which players can experience a game full of appealing elements hot-trending music, smooth characters, and amazing dance moves.",
+          "collectionDescription": "",
+          "updatedAt": "2023-02-10T10:58:10.111Z"
+        }
+      },
+      "Airdrop": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "64532ead060428fa566c9fbc"
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "2ae00ece-98b5-42b8-9134-d873ef31944b"
+          },
+          "itemId": {
+            "type": "string",
+            "example": "64532ead1b83594acec1f79f"
+          },
+          "event": {
+            "type": "string",
+            "example": "RG-02"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "AirdropEvent": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "64532ead060428fa566c9fbc"
+          },
+          "event": {
+            "type": "string",
+            "example": "RG-02"
+          },
+          "maxAmount": {
+            "type": "integer"
+          },
+          "remainingAmount": {
+            "type": "integer"
+          },
+          "item": {
+            "type": "object"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "Paginator": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "example": 1
+          },
+          "limit": {
+            "type": "integer",
+            "example": 10
+          },
+          "totalPages": {
+            "type": "integer",
+            "example": 1
+          },
+          "currentPage": {
+            "type": "integer",
+            "nullable": true,
+            "example": null
+          },
+          "slNo": {
+            "type": "number",
+            "nullable": true,
+            "example": null
+          },
+          "hasPrevPage": {
+            "type": "boolean",
+            "example": false
+          },
+          "hasNextPage": {
+            "type": "boolean",
+            "example": false
+          },
+          "prev": {
+            "type": "integer",
+            "nullable": true,
+            "example": null
+          },
+          "next": {
+            "type": "integer",
+            "nullable": true,
+            "example": null
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "msg": {
+                  "type": "string"
+                },
+                "param": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "code": 401,
+              "message": "Please authenticate"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "code": 403,
+              "message": "Forbidden"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "code": 404,
+              "message": "Not found"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "accessKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "access_key"
+      },
+      "appId": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "app_id"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Airdrop Event",
+      "description": "Airdrop event information"
+    },
+    {
+      "name": "Airdrop",
+      "description": "Airdrop"
+    },
+    {
+      "name": "Marketplace",
+      "description": "NFT Marketplace order APIs"
+    },
+    {
+      "name": "Pack",
+      "description": "Pack information in Store"
+    },
+    {
+      "name": "Statistics",
+      "description": "Statistic APIs"
+    },
+    {
+      "name": "Store Order",
+      "description": "Order in store"
+    }
+  ]
+}
