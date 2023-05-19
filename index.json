@@ -53,7 +53,7 @@
   "tags": [
     {
       "name": "Token",
-      "description": "This is in the description\\\nThis is in **bold**"
+      "description": "API endpoints for token management, includes get balance, increase/decrease balance."
     },
     {
       "name": "Item",
