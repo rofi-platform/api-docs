@@ -2,7 +2,7 @@ description: |
   # Authentication
 
   ### Acquiring an API Key
-  All HTTP requests made against the ROFI API must be validated with a pair of API Key (app_id and access_key). If you don't have an API Key Pair yet visit the [Project Manager](mailto:user@example.com) to register for one.
+  All HTTP requests made against the ROFI API must be validated with a pair of API Key (app_id and access_key). If you don't have an API Key Pair yet contact the [Project Manager](mailto:user@example.com) to register for one.
 
   ### Using Your API Key
   You may use any *server side* programming language that can make HTTP requests to target the ROFI API. All requests should target domain `https://api-dev.rofi.games`.
