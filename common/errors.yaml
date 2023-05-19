@@ -1,0 +1,29 @@
+description: | 
+  # Errors and Rate Limits
+  ### HTTP Status Codes
+  The API uses standard HTTP status codes to indicate the success or failure of an API call.
+
+  - `400 (Bad Request)` The server could not process the request, likely due to an invalid argument.
+  - `401 (Unauthorized)` Your request lacks valid authentication credentials, likely an issue with your API Key.
+  - `401 (Unauthorized)` The resource can not be found.
+  - `429 (Too Many Requests)` The transaction creation for an user rate limit was exceeded; consider slowing down your API Request frequency for this user if this is an HTTP request throttling error.
+  - `500 (Internal Server Error)` An unexpected server issue was encountered.
+  
+  ### Error Response Codes
+  A `code` field is always included in the JSON response payload for both successful calls and failures when possible. During error scenarios you may reference the `code` and `message` properties of the response object. One of the API error codes below will be returned if applicable otherwise the HTTP status code for the general error type is returned.
+  Code | Message
+  ----------------|-------------
+  2001  | Invalid transactionType.
+  2011  | transactionHash existed
+  2210  | Invalid transaction. Not a withdraw transaction or not a pending transaction
+  2101  | userId and item's userId not match.
+  2103  | Item is not deposited.
+  2105  | Item not Selling or Available.
+  2102  | Item minted.
+  440  | Order existed!.
+  441  | Filled Order or Cancelled Order can not update price
+  441  | NFT is on sale
+  3100  | Can not change item status
+  4900  | pack exists
+  4501  | The account has received airdrop item before
+  4502  | Airdrop items for this event is out of stock!

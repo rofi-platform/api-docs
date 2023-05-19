@@ -3,11 +3,13 @@
   "info": {
     "title": "ROFI Platform",
     "version": "1.0.0",
-    "description": "ROFI API Document",
+    "description": {
+      "$ref": "./common/errors.yaml#/description"
+    },
     "contact": {
       "name": "ROFI Platform",
       "url": "https://app.rofi.games/",
-      "email": "tanlm@bravezone.com"
+      "email": "anhnd@bravezone.com"
     }
   },
   "host": "developer.rofi.games",
