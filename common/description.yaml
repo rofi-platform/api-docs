@@ -15,7 +15,7 @@ description: |
 
   - `400 (Bad Request)` The server could not process the request, likely due to an invalid argument.
   - `401 (Unauthorized)` Your request lacks valid authentication credentials, likely an issue with your API Key.
-  - `401 (Unauthorized)` The resource can not be found.
+  - `404 (Not Found)` The resource can not be found.
   - `429 (Too Many Requests)` The transaction creation for an user rate limit was exceeded; consider slowing down your API Request frequency for this user if this is an HTTP request throttling error.
   - `500 (Internal Server Error)` An unexpected server issue was encountered.
   
