@@ -30,9 +30,11 @@ description: |
   2103  | Item is not deposited.
   2105  | Item not Selling or Available.
   2102  | Item minted.
-  440  | Order existed!.
-  441  | Filled Order or Cancelled Order can not update price
-  441  | NFT is on sale
+  4430  | Pack not found!.
+  4440  | Order existed!.
+  4441  | Filled Order or Cancelled Order can not update price
+  4442  | NFT is on sale
+  4443  | Order not found!
   3100  | Can not change item status
   4900  | pack exists
   4501  | The account has received airdrop item before
